@@ -1,4 +1,15 @@
 ```yaml
+---
+apiVersion: v1
+data:
+  azurestorageaccountkey: <stroageaccount#_key>    # echo stroageaccount_key | base64
+  azurestorageaccountname: <storageaccount name in base64> # echo storageaccountname | base64
+kind: Secret
+metadata:
+  name: azure-secret
+  namespace: <namespace>
+type: Opaque
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
